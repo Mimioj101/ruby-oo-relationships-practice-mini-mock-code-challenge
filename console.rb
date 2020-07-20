@@ -1,6 +1,7 @@
 require 'pry'
 require_relative './book'
 require_relative './author'
+require_relative './book_author'
 
 #authors
 john_s = Author.new("John Smith")
@@ -8,24 +9,26 @@ james_b = Author.new("James Baldwin")
 maya_a = Author.new("Maya Angelou")
 jane_a = Author.new("Jane Austen")
 
-#books
-s_s = Book.new("Sense and Sensibility", jane_a, 250000)
-p_p = Book.new("Pride and Prejudice", jane_a, 32000)
-apple = Book.new("Our Apple is Red", john_s, 450)
-beal_str = Book.new("If Beal Street Could Talk", james_b, 1200)
-caged_bird = Book.new("I Know Why The Caged Bird Sings", maya_a, 1150)
-banana = Book.new("Our Banana is Yellow", john_s, 2000)
-kiwi = Book.new("Kiwis are Green", john_s, 3000)
-beal_str = Book.new("If Beal Street Could Talk", james_b, john_s, 1200)
-caged_bird = Book.new("I Know Why The Caged Bird Sings", maya_a, james_b, 1150)
-banana = Book.new("Our Banana is Yellow", john_s, maya_a, 2000)
+#books & BookAuthors
+s_s = Book.new("Sense and Sensibility", 250000)
+BookAuthor.new(john_s, s_s)
+BookAuthor.new(jane_a, s_s)
 
+p_p = Book.new("Pride and Prejudice", 32000)
+BookAuthor.new(jane_a, p_p)
 
+apple = Book.new("Our Apple is Red", 450)
+BookAuthor.new(john_s, apple)
+BookAuthor.new(maya_a, apple)
 
-#Author_Book
-john_s = AuthorBook.new("John Smith", beal_str)
-james_b = AuthorBook.new("James Baldwin", caged_bird)
-maya_a = AuthorBook.new("Maya Angelou", banana)
+beal_str = Book.new("If Beal Street Could Talk", 1200)
+BookAuthor.new(james_b, beal_str)
+
+caged_bird = Book.new("I Know Why The Caged Bird Sings", 1150)
+BookAuthor.new(maya_a, caged_bird)
+
+banana = Book.new("Our Banana is Yellow", 2000)
+BookAuthor.new(john_s, banana)
 
 
 

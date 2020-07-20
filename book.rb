@@ -3,11 +3,10 @@ class Book
 
     @@all = []
 
-    attr_accessor :title, :author, :word_count
+    attr_accessor :title, :word_count
 
-    def initialize(title, author, word_count)
+    def initialize(title, word_count)
         @title = title
-        @author = author
         @word_count = word_count
         @@all << self
     end
@@ -16,9 +15,13 @@ class Book
         @@all
     end
 
-    # def AuthorBook
-    #     AuthorBook
-    # end
+    def book_authors
+        BookAuthor.all.select {|book_author| book_author.book == self}
+    end
 
-    # We know AuthorBook will need to be included in attr_accessor.
+    def authors
+        self.book_authors.map {|book_author| book_author.author}
+    end
+
+   
 end

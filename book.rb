@@ -16,5 +16,9 @@ class Book
         @@all
     end
 
+    # def AuthorBook
+    #     AuthorBook
+    # end
 
+    # We know AuthorBook will need to be included in attr_accessor.
 end

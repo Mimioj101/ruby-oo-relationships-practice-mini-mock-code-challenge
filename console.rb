@@ -16,6 +16,17 @@ beal_str = Book.new("If Beal Street Could Talk", james_b, 1200)
 caged_bird = Book.new("I Know Why The Caged Bird Sings", maya_a, 1150)
 banana = Book.new("Our Banana is Yellow", john_s, 2000)
 kiwi = Book.new("Kiwis are Green", john_s, 3000)
+beal_str = Book.new("If Beal Street Could Talk", james_b, john_s, 1200)
+caged_bird = Book.new("I Know Why The Caged Bird Sings", maya_a, james_b, 1150)
+banana = Book.new("Our Banana is Yellow", john_s, maya_a, 2000)
+
+
+
+#Author_Book
+john_s = AuthorBook.new("John Smith", beal_str)
+james_b = AuthorBook.new("James Baldwin", caged_bird)
+maya_a = AuthorBook.new("Maya Angelou", banana)
+
 
 
 
